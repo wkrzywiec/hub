@@ -1,0 +1,41 @@
+﻿projects:
+  hub:
+    path: .
+    url: https://github.com/wkrzywiec/hub.git
+
+  newsletters-triage:
+    path: private/newsletters-triage
+    url: https://github.com/wkrzywiec/newsletters-triage.git
+
+  local-postgres:
+    path: private/local-postgres
+    url: https://github.com/wkrzywiec/local-postgres.git
+
+  wkrzywiec.github.io:
+    path: blog/wkrzywiec.github.io
+    url: https://github.com/wkrzywiec/wkrzywiec.github.io.git
+
+  nutri-chef-ai:
+    path: blog/projects/nutri-chef-ai
+    url: https://github.com/wkrzywiec/nutri-chef-ai.git
+
+  mankkoo:
+    path: private/mankkoo
+    url: https://github.com/wkrzywiec/mankkoo.git
+
+  farm-to-table:
+    path: blog/projects/farm-to-table
+    url: https://github.com/wkrzywiec/farm-to-table.git
+
+tasks:
+  sync-main:
+    desc: Fetch, checkout the default branch (main or master) and fast-forward it
+    shell: bash
+    cmd: |
+      git fetch --all --prune
+      git remote set-head origin -a >/dev/null
+      branch=$(git symbolic-ref --short refs/remotes/origin/HEAD | sed 's@^origin/@@')
+      git checkout "$branch" && git pull --ff-only
+  hello:
+    desc: Print Hello World
+    cmd: echo "Hello World"
