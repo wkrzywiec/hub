@@ -16,7 +16,7 @@ The ticket is assumed ready to implement.
 2. **Branch.** Detect the base (`main`, else `master`). Branch off its tip as `<issue-number>-<short-slug>`; the number in the name lets `pr-description` link the issue. Reuse the branch if you are already on one for this ticket.
 
 3. **Implement.** Call the Skill tool with `implement` and the ticket reference. While it runs, keep a running **concerns list**, each entry one line with the file or decision it concerns:
-   - **Assumption**: anything unclear in the ticket where you picked an interpretation instead of asking.
+   - **Assumption**: anything unclear in the ticket where you picked an interpretation instead of asking, including the `tdd` seams you chose yourself.
    - **Finding**: each `code-review` finding left unfixed. Fix the unambiguous ones first.
    - **Gap**: failing or skipped checks, untested paths, work left out.
 
